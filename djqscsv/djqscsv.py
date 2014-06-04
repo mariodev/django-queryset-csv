@@ -140,6 +140,7 @@ def _validate_and_clean_filename(filename):
 def _sanitize_unicode_record(record):
 
     def _sanitize_value(value):
+        value = value.replace(',', '')
         if isinstance(val, unicode):
             return value.encode("utf-8")
         else:
